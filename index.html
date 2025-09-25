@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zufalls-Auswahl</title>
+  <style>
+
+    h1 {
+      text-align: center;
+      font-size: 4em;
+      color: rgb(0, 0, 0);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 40px 0;              /* große Klickfläche */
+      border: none;
+      background: white;            /* Hintergrund neutral */
+      position: relative;
+      font-size: 4em;
+      background-color: rgba(128, 128, 128, 0.294)
+    }
+
+    #output {
+      margin: 20px;
+      font-size: 4em;
+      color: darkblue;
+      
+    }
+  </style>
+</head>
+<body>
+<div id="output">Liste wird geladen…</div>
+  <button onclick="drawValue()">neuer Wert</button>
+  
+  <script>
+    let originalList = [];
+    let availableList = [];
+
+    // .txt Datei laden
+    fetch("liste.txt")
+      .then(response => response.text())
+      .then(text => {
+        originalList = text.split(/\r?\n/).filter(line => line.trim() !== "");
+        availableList = [...originalList];
+        document.getElementById("output").innerText = "Liste geladen! (" + originalList.length + " Werte)";
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Fehler beim Laden der Liste!";
+        console.error(err);
+      });
+
+    function drawValue() {
+      if (availableList.length === 0) {
+        document.getElementById("output").innerText = "Alle Werte wurden bereits gezogen!";
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * availableList.length);
+      const value = availableList.splice(randomIndex, 1)[0];
+      document.getElementById("output").innerText = value;
+    }
+
+    function resetList() {
+      availableList = [...originalList];
+      document.getElementById("output").innerText = "Liste zurückgesetzt! (" + availableList.length + " Werte)";
+    }
+  </script>
+</body>
+</html>

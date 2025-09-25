@@ -1,0 +1,45 @@
+Badminton
+Baseball/Softball
+Basketball
+Boxen
+Breakdance
+Fechten
+Fußball
+Golf
+Gewichtheben
+Handball
+Hockey
+Judo
+Leichtathletik
+Moderner Fünfkampf
+Radsport Bahn
+Mountainbike
+Dressurreiten
+Springreiten
+Rudern
+Rugby
+Schwimmen
+Synchronschwimmen
+Wasserball
+Wasserspringen
+Skateboard
+Klettern
+Surfen
+Tennis
+Tischtennis
+Triathlon
+Trampolinturnen
+Volleyball
+Ringen
+Biathlon
+Bob
+Curling
+Eishockey
+Eiskunstlauf
+Eisschnelllauf
+Nordische Kombination
+Rodeln
+Ski Alpin
+Skilanglauf
+Skispringen
+Snowboard
